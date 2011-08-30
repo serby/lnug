@@ -1,0 +1,201 @@
+@charset "UTF-8";
+
+body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  background: #f0f3f0;
+  color: #333333;
+  margin: 0;
+  padding: 0; }
+
+#wrapper {
+  width: 700px;
+  background: white;
+  padding: 0px 20px;
+  margin: 0 auto 20px;
+  text-align: left; }
+
+#header {
+  position: relative; }
+  #header h1 {
+    background: #b8ed00;
+    position: absolute;
+    top: -40px;
+    left: -75px;
+    color: #111111;
+    border-radius: 75px;
+    font-size: 50px;
+    padding: 50px 30px;
+    display: inline-block;
+    font-family: "Banda", "Helvetica Neue", "Arial", sans-serif;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    border: 8px solid #98cd00; }
+    #header h1:hover {
+      border-color: #a8dd00;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg); }
+
+#info {
+  background: black;
+  padding: 15px 10px 15px 140px;
+  color: white;
+  border-bottom: 2px solid #202020;
+  position: relative;
+  z-index: 1;
+  right: -20px; }
+  #info p {
+    padding: 0px;
+    margin: 0px; }
+
+#blurb {
+  padding: 20px 20px 20px 160px; }
+  #blurb p {
+    line-height: 30px; }
+
+#content {
+  border-top: 1px solid #dddddd;
+  padding: 20px 0px; }
+
+#map {
+  width: 90%;
+  border: 5px solid #f0f0f0;
+  height: 180px; }
+
+ul.event-actions {
+  margin: 0 0 10px;
+  padding: 0; }
+  ul.event-actions li {
+    list-style: none;
+    margin-bottom: 10px; }
+    ul.event-actions li a {
+      font-weight: bold;
+      background: white;
+      border-bottom: 0; }
+  ul.event-actions .register a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 25px 0px;
+    float: none;
+    background: #d0f57e; }
+    ul.event-actions .register a:hover, ul.event-actions .register a:active {
+      background: #d5d5d5;
+      padding-left: 50px; }
+  ul.event-actions .lanyrd {
+    float: left;
+    padding-left: 26px;
+    background: url("../images/lanyrd.png") no-repeat 0 50%;
+    margin-right: 14px; }
+  ul.event-actions .addcal {
+    float: left;
+    padding-left: 26px;
+    background: url("../images/ical.png") no-repeat 0 50%; }
+
+#footer {
+  border-top: 1px solid #dddddd;
+  margin-top: 25px;
+  color: #aaaaaa;
+  font-size: 12px; }
+  #footer p {
+    float: left; }
+  #footer a.img {
+    background: none;
+    border: none;
+    float: right;
+    padding-top: 10px; }
+
+h2 {
+  margin: 10px 0px 15px; }
+
+a, a:visited {
+  color: #334433;
+  border-bottom: 1px solid #c0d56e;
+  text-decoration: none;
+  background: #d0f57e;
+  padding: 0px 2px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear; }
+  a:hover, a:visited:hover {
+    background: #f5fd72;
+    border-bottom-color: #f2fd3f; }
+
+p {
+  line-height: 26px; }
+
+.column {
+  float: left;
+  width: 320px;
+  margin-bottom: 10px; }
+
+.row {
+  border-top: 1px solid #eeeeee;
+  margin-top: 15px;
+  padding-top: 15px; }
+
+.clear, #footer {
+  clear: both; }
+
+.clear:after, #footer:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+@media only screen and (max-width: 600px) {
+  #header h1 {
+    position: static;
+    display: block;
+    border: 0;
+    padding: 30px 20px;
+    border-radius: 0;
+    margin: 0px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg); }
+    #header h1:hover {
+      border: 0;
+      -webkit-transform: rotate(0deg); }
+
+  #info, #blurb {
+    display: block;
+    padding: 20px;
+    position: static; }
+
+  #venue {
+    clear: both;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #eeeeee; }
+
+  #wrapper {
+    width: 100%;
+    padding: 0px 0px 20px; }
+
+  #content {
+    padding: 10px 20px 0px; }
+
+  .column {
+    width: 100%; }
+
+  .left, .right, .lanyrd, .addcal {
+    float: none; }
+
+  #footer a.img {
+    float: none; } }
