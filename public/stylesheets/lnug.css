@@ -143,8 +143,12 @@ a, a:visited {
     color:#000;
     border-bottom-color: #f2fd3f; }
 
-p {
+p, address {
   line-height: 26px; }
+
+address {
+  font-style: normal;
+}
 
 .column {
   float: left;
