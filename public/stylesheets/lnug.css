@@ -130,7 +130,7 @@ ul.event-actions {
 h2 {
   margin: 10px 0px 15px; }
 
-a, a:visited {
+a, a:visited, body ul#videos li a p {
   color: #334433;
   border-bottom: 1px solid #c0d56e;
   text-decoration: none;
@@ -138,7 +138,7 @@ a, a:visited {
   padding: 0px 2px;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear; }
-  a:hover, a:visited:hover {
+  a:hover, body ul#videos li a:hover p, a:visited:hover {
     background: #f5fd72;
     color:#000;
     border-bottom-color: #f2fd3f; }
@@ -176,6 +176,39 @@ address {
 
 .right {
   float: right; }
+
+ul#videos {
+  float: left;
+  width: 715px;
+  margin: 0;
+  padding: 0;
+}
+
+ul#videos li {
+  list-style: none;
+  margin: 0 15px 30px 0;
+  padding: 0;
+  width: 150px;
+  float: left;
+}
+
+body ul#videos li a {
+  display: block;
+  float: left;
+  text-decoration: none;
+  border-bottom: none;
+}
+body ul#videos li a p {
+  padding: 5px 0 5px 5%;
+  margin: 0px;
+  width: 95%;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+body ul#videos li a:hover {
+  background: #fff;
+}
 
 @media only screen and (max-width: 600px) {
   #header h1 {

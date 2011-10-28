@@ -196,6 +196,21 @@ If you would like to join us, visit http://forwardtechnology.co.uk/jobs
             directly.
           </p>
         </div>
+        <% if(videos.length > 0) { %>
+        <div class="row clear">
+          <h2>We're also on Vimeo</h2>
+          <ul id="videos">
+          <% for(var i=0; i<videos.length; i++) {%>
+          <li>
+            <a href="<%= videos[i].url %>" target="_blank">
+              <img src="<%= videos[i].thumbnail_medium %>" alt="Link to <%= videos[i].title %>" width="150" />
+              <p><%= videos[i].title %></p>
+            </a>
+          </li>
+          <% } %>
+          </ul>
+        </div>
+        <% } %>
         <div id='footer'>
           <p>
             London Node User Group 2011 - Hosted by Forward -
