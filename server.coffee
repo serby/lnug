@@ -12,9 +12,14 @@ app.configure ->
   app.set('views',__dirname + "/views/")
   
 # server routes
+vimeo = require('./lib/vimeo')
+vimeo.keyword = 'LNUG'
 
 app.get "/", (req,res) ->
-  res.render 'lnug.html', layout: false
+  videos = vimeo.request('forwardtechnology')
+  console.log vimeo.keyword
+  res.render 'lnug.html', layout: false, locals:
+                                            videos = vimeo.videos
 
 port = process.env.PORT || 8080
 app.listen port
