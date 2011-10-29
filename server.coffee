@@ -18,10 +18,11 @@ vimeo.request()
 # server routes
 
 app.get "/", (req,res) ->
+  videos = vimeo.videos
   vimeo.request()
 
   res.render 'lnug.html', layout: false, locals:
-                                            videos: vimeo.videos
+                                            videos: videos
 
 port = process.env.PORT || 8080
 app.listen port
