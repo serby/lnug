@@ -4,6 +4,7 @@
   "dependencies": {
     "coffee-script": "1.1.2",
     "express": "2.4.0",
-    "ejs": "0.4.3"
+    "ejs": "0.4.3",
+    "jsonsp": "0.3.18"
   }
 }

@@ -15,8 +15,8 @@ app.configure ->
 vimeo = require('./lib/vimeo')
 vimeo.keyword = 'LNUG'
 vimeo.request()
-# server routes
 
+# server routes
 app.get "/", (req,res) ->
   videos = vimeo.videos
   vimeo.request()
