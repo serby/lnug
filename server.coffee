@@ -11,10 +11,18 @@ app.configure ->
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true}))
   app.set('views',__dirname + "/views/")
   
-# server routes
 
+vimeo = require('./lib/vimeo')
+vimeo.keyword = 'LNUG'
+vimeo.request()
+
+# server routes
 app.get "/", (req,res) ->
-  res.render 'lnug.html', layout: false
+  videos = vimeo.videos
+  vimeo.request()
+
+  res.render 'lnug.html', layout: false, locals:
+                                            videos: videos
 
 port = process.env.PORT || 8080
 app.listen port

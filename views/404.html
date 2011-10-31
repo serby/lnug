@@ -68,7 +68,7 @@ If you would like to join us, visit http://forwardtechnology.co.uk/jobs
             </strong>
             , with our talks starting at 7pm.
           </p>
-          <p>We have three talks lined-up so far:</p>
+          <p>We have two talks lined-up so far:</p>
           <ul>
             <li>
               <strong>Mike de Boer</strong>
@@ -79,12 +79,6 @@ If you would like to join us, visit http://forwardtechnology.co.uk/jobs
                 Richard Miller-Smith
               </strong>
               - State machines and asynchronous programming
-            </li>
-            <li>
-              <strong>
-                Andrew Seddon
-              </strong>
-              Massive-git, a revision controlled database
             </li>
           </ul>
           <ul class='event-actions'>
@@ -196,22 +190,6 @@ If you would like to join us, visit http://forwardtechnology.co.uk/jobs
             directly.
           </p>
         </div>
-        <% if(videos.length > 0) { %>
-        <div class="row clear">
-          <h2>Videos From Previous Events</h2>
-          <ul id="videos">
-          <% for(var i=0; i<videos.length; i++) {%>
-          <li>
-            <a href="<%= videos[i].url %>" target="_blank">
-              <img src="<%= videos[i].thumbnail_medium %>" alt="Link to <%= videos[i].title %>" width="150" />
-              <p><%= videos[i].title %></p>
-            </a>
-          </li>
-          <% } %>
-          </ul>
-          <a href="http://vimeo.com/forwardtechnology/videos/search:lnug/sort:newest" target="_blank">View all videos from LNUG</a>
-        </div>
-        <% } %>
         <div id='footer'>
           <p>
             London Node User Group 2011 - Hosted by Forward -
