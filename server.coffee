@@ -19,7 +19,7 @@ vimeo.request()
 
 # server routes
 app.get "/", (req,res) ->
-  videos = vimeo.videos.map (v) ->
+  videos = vimeo.videos[0..3].map (v) ->
     {
       title: v.title,
       a: {
