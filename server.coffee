@@ -30,7 +30,6 @@ app.get "/", (req,res) ->
         alt: v.title
       }
     }
-  vimeo.request()
 
   res.render 'index.html',
     selectors: {
