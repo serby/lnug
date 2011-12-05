@@ -130,7 +130,7 @@ ul.event-actions {
 h2 {
   margin: 10px 0px 15px; }
 
-a, a:visited, body ul#videos li a p {
+a, a:visited, ul#videos li a p {
   color: #334433;
   border-bottom: 1px solid #c0d56e;
   text-decoration: none;
@@ -192,13 +192,13 @@ ul#videos li {
   float: left;
 }
 
-body ul#videos li a {
+ul#videos li a {
   display: block;
   float: left;
   text-decoration: none;
   border-bottom: none;
 }
-body ul#videos li a p {
+ul#videos li a p {
   padding: 5px 0 5px 5%;
   margin: 0px;
   width: 95%;
@@ -206,7 +206,7 @@ body ul#videos li a p {
   line-height: 18px;
 }
 
-body ul#videos li a:hover {
+ul#videos li a:hover {
   background: #fff;
 }
 
@@ -215,7 +215,8 @@ body ul#videos li a:hover {
     position: static;
     display: block;
     border: 0;
-    padding: 30px 20px;
+    width: auto;
+    padding: 50px 20px;
     border-radius: 0;
     margin: 0px;
     -webkit-transform: rotate(0deg);
@@ -238,6 +239,31 @@ body ul#videos li a:hover {
   #wrapper {
     width: 100%;
     padding: 0px 0px 20px; }
+
+  ul#videos {
+    width: auto;
+    float: none;
+    margin-bottom: 20px;
+  }
+  
+  ul#videos li {
+    float: none;
+    display: block;
+    width: 100%;
+    padding: 0;
+    clear: both;
+  }
+  
+  ul#videos li a {
+    width: 100%;
+    display: block;
+  }
+  ul#videos li a p {
+    float: right;
+    width: 40%;
+    padding: 25px 10px 25px;
+    border-bottom: none;
+  }
 
   #content {
     padding: 10px 20px 0px; }
