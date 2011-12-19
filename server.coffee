@@ -1,5 +1,13 @@
 express = require 'express'
 sizlate = require 'sizlate'
+mongoose = require 'mongoose'
+require 'datejs'
+md = require("node-markdown").Markdown
+
+mongoose.connect 'mongodb://localhost/lnug'
+
+Schema = mongoose.Schema
+ObjectId = Schema.ObjectId
 
 app = express.createServer()
 
@@ -16,6 +24,19 @@ app.configure ->
 vimeo = require('./lib/vimeo')
 vimeo.keyword = 'LNUG'
 vimeo.request()
+
+JobSchema = new Schema
+  job_title     : String
+  description   : String
+  name          : String
+  email         : String
+  company_name  : String
+  company_url   : String
+  location      : String
+  type          : String
+  date          : {type: Date, default: Date.now }
+
+Job = mongoose.model('Job', JobSchema)
 
 # server routes
 app.get "/", (req,res) ->
@@ -39,6 +60,55 @@ app.get "/", (req,res) ->
       }
     }
 
+app.get '/jobs', (req,res) ->
+  # Job.where('date').gt(Date.parse('30 days ago')).run (err, docs) ->
+  Job.find({}).execFind (err, docs) ->
+    console.log docs
+
+    if docs
+      jobs = docs.map (j) ->
+        {
+          company: {
+            href: j.company_url,
+            innerHTML: j.company_name
+          },
+          type: j.type
+          location: j.location,
+          title: j.job_title,
+          description: md(j.description, true),
+          apply: {
+            href: "mailto:#{j.email}"
+          }
+        }
+    else
+      jobs = []
+
+    res.render 'jobs.html',
+      selectors: {
+        'ul#jobs':{
+          partial: 'job.html',
+          data: jobs
+        }
+      }
+
+app.get '/submit', (req,res) ->
+  res.render 'submit.html',
+    selectors: {}
+
+app.post '/submit', (req,res) ->
+  job = new Job(req.body)
+  if req.body.password == 'sizzle'
+    job.save (err) ->
+      if err
+        res.render 'submit.html',
+           selectors: {}
+      else
+        res.redirect '/jobs'
+  else
+    res.render 'submit.html',
+       selectors: {
+         '.error': 'Invalid password'
+       }
 
 sizlate.startup app, (app) ->
   port = process.env.PORT || 8080

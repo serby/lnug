@@ -4,6 +4,8 @@
   "dependencies": {
     "coffee-script": "1.1.2",
     "express": "2.5.0",
-    "sizlate": "0.2.0"
+    "sizlate": "0.2.0",
+    "mongoose": "2.3.13",
+    "datejs": "0.0.2"
   }
 }

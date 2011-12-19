@@ -1,0 +1,29 @@
+<div>
+  <h1>Submit your Job</h1>
+  <p>List a node.js job posting, free for <b>30 days</b>, all fields required.</p>
+  <p>
+    You can only post a job if you have attended a meetup, each month a <b>new password</b> will be
+    provided at the start of the event which can be used until the next event.
+  </p>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function(){
+      $("#post_job").validate();
+    });
+  </script>
+  <form action='/submit' id='post_job' method='post'>
+    <input id='job_title' type='text' class="required" name='job_title' placeholder='Job Title' />
+    <textarea class="required" name="description" rows="8" cols="40" placeholder='Job Description (markdown)'></textarea>
+    <input type='text' class="required" name='name' placeholder='Your Name' />
+    <input type='text' class="required email" name='email' placeholder='Contact Email' />
+    <input type='text' class="required" name='company_name' placeholder='Company Name' />
+    <input type='text' class="required" name='company_url' placeholder='Company Website' />
+    <input type='text' class="required" name='location' placeholder='Location' />
+    <select name='type'>
+      <option>Full Time</option>
+      <option>Part Time</option>
+      <option>Contract</option>
+    </select>
+    <input type='text' name='password' class="required" placeholder='Meetup Password'/>
+    <input type='submit' value='Post your Job'>
+  </form>
+</div>

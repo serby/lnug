@@ -284,3 +284,41 @@ ul#videos li a:hover {
 .twtr-hd, .twtr-ft{
   display:none !important;
 }
+
+#post_job input, textarea, select{
+  display:inline-block;
+  width:48%;
+  margin:0 1% 10px 0;
+  font-size: 16px;
+  padding: 8px;
+  border:1px solid #D4D4D4;
+}
+#post_job textarea, #post_job #job_title{
+  width:97%;
+}
+
+#post_job input[type='submit']{
+  display: block;
+  padding: 10px 12px;
+  border-radius: 5px;
+  font-size: 20px;
+  float: none;
+  color: #000;
+  background: #d0f57e;
+  float:right;
+}
+
+div.error{
+  color:red;
+  font-weight:bold;
+}
+label.error{
+  position:absolute;
+  padding:0 5px;
+  background:rgba(0,0,0, 0.5);
+  color:#fff;
+  font-size:11px;
+  margin:5px 0 0 -125px;
+  border-radius:5px;
+  text-align:right;
+}
