@@ -186,6 +186,10 @@ ul#videos li {
   float: left;
 }
 
+ul#videos img {
+  float:left;
+}
+
 ul#videos li a {
   display: block;
   float: left;
@@ -248,6 +252,7 @@ ul#videos li a:hover {
     width: 100%;
     padding: 0;
     clear: both;
+    overflow:hidden;
   }
 
   ul#videos li a {
@@ -255,7 +260,7 @@ ul#videos li a:hover {
     display: block;
   }
   ul#videos li a p {
-    float: right;
+    float: left;
     width: 40%;
     padding: 25px 10px 25px;
     border-bottom: none;
