@@ -25,16 +25,18 @@ vimeo = require('./lib/vimeo')
 vimeo.keyword = 'LNUG'
 vimeo.request()
 
-JobSchema = new Schema
-  job_title     : String
-  description   : String
-  name          : String
-  email         : String
-  company_name  : String
-  company_url   : String
-  location      : String
-  type          : String
-  date          : {type: Date, default: Date.now }
+JobSchema = new Schema({
+  job_title     : { type: String, required: true },
+  description   : { type: String, required: true },
+  name          : { type: String, required: true },
+  email         : { type: String, required: true },
+  company_name  : { type: String, required: true },
+  company_url   : { type: String, required: true },
+  location      : { type: String, required: true },
+  type          : { type: String, required: true },
+  date          : { type: Date,   default: Date.now }
+})
+
 
 Job = mongoose.model('Job', JobSchema)
 
@@ -61,13 +63,11 @@ app.get "/", (req,res) ->
     }
 
 app.get '/jobs', (req,res) ->
-  # Job.where('date').gt(Date.parse('30 days ago')).run (err, docs) ->
-  Job.find({}).execFind (err, docs) ->
-    console.log docs
-
+  Job.where('date').gt(Date.parse('-30days')).run (err, docs) ->
     if docs
       jobs = docs.map (j) ->
         {
+          date: j.date.toDateString(),
           company: {
             href: j.company_url,
             innerHTML: j.company_name
@@ -97,11 +97,13 @@ app.get '/submit', (req,res) ->
 
 app.post '/submit', (req,res) ->
   job = new Job(req.body)
-  if req.body.password == 'sizzle'
+  if req.body.password == process.env['job_password']
     job.save (err) ->
       if err
         res.render 'submit.html',
-           selectors: {}
+           selectors: {
+             '.error': 'Invalid submission, all fields are required'
+           }
       else
         res.redirect '/jobs'
   else
