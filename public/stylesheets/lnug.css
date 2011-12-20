@@ -259,9 +259,11 @@ ul#videos li a:hover {
     width: 100%;
     display: block;
   }
+  ul#videos img{
+    margin-right:10px;
+  }
+
   ul#videos li a p {
-    float: left;
-    width: 40%;
     padding: 25px 10px 25px;
     border-bottom: none;
   }
