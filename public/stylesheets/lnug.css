@@ -205,19 +205,21 @@ ul#videos li a:hover {
 }
 
 @media only screen and (max-width: 600px) {
-  #header h1 {
+  #header{
+    width:100%;
+    padding:0 0 0 20px;
+  }
+  #header h1{
+    margin:0;
+  }
+  #header h1 a {
     position: static;
     display: block;
     border: 0;
     width: auto;
-    padding: 50px 20px;
+    padding: 50px 0;
     border-radius: 0;
-    margin: 0px;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg); }
-    #header h1:hover {
-      border: 0;
-      -webkit-transform: rotate(0deg); }
+    margin: 0px;}
 
   #info, #blurb {
     display: block;
@@ -239,7 +241,7 @@ ul#videos li a:hover {
     float: none;
     margin-bottom: 20px;
   }
-  
+
   ul#videos li {
     float: none;
     display: block;
@@ -247,7 +249,7 @@ ul#videos li a:hover {
     padding: 0;
     clear: both;
   }
-  
+
   ul#videos li a {
     width: 100%;
     display: block;
