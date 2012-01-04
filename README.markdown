@@ -25,4 +25,4 @@ Report Issues/Feature requests on [GitHub Issues](http://github.com/forward/lnug
 
 ## Copyright
 
-Copyright (c) 2011 Forward. See [LICENSE](https://github.com/forward/lnug/blob/master/LICENSE) for details.
+Copyright (c) 2012 Forward. See [LICENSE](https://github.com/forward/lnug/blob/master/LICENSE) for details.
