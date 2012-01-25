@@ -4,7 +4,7 @@ mongoose = require 'mongoose'
 require 'datejs'
 md = require("node-markdown").Markdown
 
-mongoose.connect 'mongodb://localhost/lnug'
+mongoose.connect process.env['MONGOHQ_URL'] || 'mongodb://localhost/lnug'
 
 Schema = mongoose.Schema
 ObjectId = Schema.ObjectId
