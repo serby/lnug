@@ -41,25 +41,45 @@ Job = mongoose.model 'Job', JobSchema
 
 # server routes
 app.get "/", (req,res) ->
-  videos = vimeo.videos[0..3].map (v) ->
-    {
-      title: v.title,
-      a: {
-        href: v.url
-      },
-      thumb: {
-        src: v.thumbnail_medium,
-        alt: v.title
+  Job.find().limit(3).sort('date',-1).run (err, docs) ->
+    jobs = docs.map (j) ->
+      {
+        date: j.date.toDateString(),
+        company: {
+          href: j.company_url,
+          innerHTML: j.company_name
+        },
+        type: j.type
+        location: j.location,
+        title: j.job_title,
+        description: md(j.description, true),
+        apply: {
+          href: "mailto:#{j.email}"
+        }
       }
-    }
+    videos = vimeo.videos[0..3].map (v) ->
+      {
+        title: v.title,
+        a: {
+          href: v.url
+        },
+        thumb: {
+          src: v.thumbnail_medium,
+          alt: v.title
+        }
+      }
 
-  res.render 'index.html',
-    selectors: {
-      'ul#videos':{
-        partial: 'video.html',
-        data: videos
+    res.render 'index.html',
+      selectors: {
+        'ul#videos':{
+          partial: 'video.html',
+          data: videos
+        }
+        'ul#jobs':{
+          partial: 'job.html',
+          data: jobs
+        }
       }
-    }
 
 app.get '/jobs', (req,res) ->
   Job.where('date').gt(Date.parse('-30days')).sort('date',-1).run (err, docs) ->
