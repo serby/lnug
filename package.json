@@ -7,6 +7,7 @@
     "sizlate": "0.2.0",
     "mongoose": "2.4.10",
     "datejs": "0.0.2",
-    "node-markdown": "0.1.0"
+    "node-markdown": "0.1.0",
+    "ejs":  "0.6.1"
   }
 }
