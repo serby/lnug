@@ -16,6 +16,7 @@ app.register '.html', sizlate
 
 app.configure ->
   app.use(express.bodyParser())
+  app.set('dirname', __dirname)
   app.use(app.router)
   app.use(express.static(__dirname + "/public/"))
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true}))
